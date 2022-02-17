@@ -26,9 +26,14 @@ sequenceDiagram
   alt Already Registered
     I->>C: validation error
     C->>V: login page
+  else Registration Fails
+    I->>D: insert user record
+    D->>I: database error
+    I->>C: registration error
+    C->>V: server error
   else Registration Succeeds
     I->>D: insert user record
-    I->>M: send verification email
+    I-->>M: send verification email
     I->>C: session token
     C->>V: welcome page
   end
