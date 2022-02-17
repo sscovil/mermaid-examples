@@ -27,8 +27,8 @@ sequenceDiagram
     I->>A: validation error
     A->>V: login page
   else Registration Succeeds
+    I->>D: insert user record
     I->>A: session token
-    A->>D: insert user record
     A->>M: send verification email
     A->>V: welcome page
   end
