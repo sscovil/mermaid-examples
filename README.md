@@ -33,6 +33,7 @@ sequenceDiagram
     C->>V: server error
   else Registration Succeeds
     I->>D: insert user record
+    I->>D: insert session record
     I-->>M: send verification email
     I->>C: session token
     C->>V: welcome page
