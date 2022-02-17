@@ -28,6 +28,7 @@ sequenceDiagram
     C->>V: login page
   else Registration Fails
     I->>D: insert user record
+    I->>D: insert session record
     D->>I: database error
     I->>C: registration error
     C->>V: server error
