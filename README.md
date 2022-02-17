@@ -28,8 +28,8 @@ sequenceDiagram
     A->>V: login page
   else Registration Succeeds
     I->>D: insert user record
+    I->>M: send verification email
     I->>A: session token
-    A->>M: send verification email
     A->>V: welcome page
   end
 ```
